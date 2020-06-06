@@ -28,31 +28,9 @@ requirements:
 
 test:
     files:
-        - os1_hw.py
-        - sites.dbf
-        - sites.sbn
-        - sites.sbx
-        - sites.shp
-        - sites.shx
-    imports:
-        - osr
-        - gdal
-        - gdalconst
-        - osgeo
-        - osgeo.ogr
-        - osgeo.gdal
-        - osgeo._gdal
-        - osgeo._gdalconst
-        - osgeo._ogr
-        - osgeo._osr
-    commands:
-        - ogrinfo sites.shp  # [not win]
-        - ogrinfo.exe sites.shp  # [win]
-        - gdal_grid --version  # [not win]
-        - gdal_rasterize --version  # [not win]
+        imports:
+        commands:
         - gdal_translate --version  # [not win]
-        - gdaladdo --version  # [not win]
-        - gdalenhance --version  # [not win]
         - gdalwarp --version  # [not win]
         - gdalinfo --formats  # [not win]
 
