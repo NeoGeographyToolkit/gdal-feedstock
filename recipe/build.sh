@@ -66,7 +66,7 @@ CPPFLAGS="-I$PREFIX/include" LDFLAGS="-L$PREFIX/lib" \
             --disable-rpath \
             --without-pam 
 
-make
+make -j 10
 make install
 
 if [ $(uname) == Darwin ]; then
