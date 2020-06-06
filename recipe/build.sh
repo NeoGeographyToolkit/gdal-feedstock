@@ -9,18 +9,62 @@ fi
 
 CPPFLAGS="-I$PREFIX/include" LDFLAGS="-L$PREFIX/lib" \
 ./configure --prefix=$PREFIX \
-            --with-hdf4=$PREFIX \
-            --with-hdf5=$PREFIX \
-            --with-xerces=$PREFIX \
-            --with-netcdf=$PREFIX \
-            --with-geos=$PREFIX/bin/geos-config \
-            --with-kea=$PREFIX/bin/kea-config \
-            --with-static-proj4=$PREFIX \
+ --without-bsb \
+ --without-cfitsio \
+ --without-dods-root \
+ --without-dwg-plt \
+ --without-dwgdirect \
+ --without-ecw \
+ --without-epsilon \
+ --without-expat \
+ --without-expat-inc \
+ --without-expat-lib \
+ --without-fme \
+ --without-gif \
+ --without-grass \
+ --without-hdf4 \
+ --without-hdf5 \
+ --without-idb \
+ --without-ingres \
+ --without-jasper \
+ --without-jp2mrsid \
+ --without-kakadu \
+ --without-libgrass \
+ --without-macosx-framework \
+ --without-mrsid \
+ --without-msg \
+ --without-mysql \
+ --without-netcdf \
+ --without-oci \
+ --without-oci-include \
+ --without-oci-lib \
+ --without-odbc \
+ --without-ogdi \
+ --without-pcidsk \
+ --without-pcraster \
+ --without-perl \
+ --without-pg \
+ --without-php \
+ --without-pymoddir \
+ --without-python \
+ --without-sde \
+ --without-sde-version \
+ --without-spatialite \
+ --without-sqlite3 \
+ --without-static-proj4 \
+ --without-xerces \
+ --without-xerces-inc \
+ --without-xerces-lib \
+ --without-libiconv-prefix \
+ --without-libiconv \
+ --without-xml2 \
+ --without-pcre \
+ --without-freexl \
+ --without-json-c \
+ --without-kea \
             --with-openjpeg=$PREFIX \
             --disable-rpath \
-            --without-pam \
-            --with-python \
-            $PGFLAG
+            --without-pam 
 
 make
 make install

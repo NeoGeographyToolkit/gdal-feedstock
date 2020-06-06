@@ -16,34 +16,15 @@ build:
 
 requirements:
     build:
-        - python
-        - setuptools
-        - numpy x.x
-        - hdf4
-        - hdf5
-        - geos
-        - proj.4
-        - xerces-c
-        - libnetcdf
-        - kealib
-        - krb5
-        - postgresql  # [linux]
-        - openjpeg  # [not win]
-        - curl  # [not win]
+        - geos 3.7.3
+        - proj4 4.9.3
+        - openjpeg  2.1.0 # [not win]
+        - curl 7.63.0 # [not win]
     run:
-        - python
-        - numpy x.x
-        - hdf4
-        - hdf5
-        - geos
-        - proj.4
-        - xerces-c
-        - libnetcdf
-        - kealib
-        - krb5
-        - postgresql  # [linux]
-        - openjpeg  # [not win]
-        - curl  # [not win]
+        - geos 3.7.3
+        - proj4 4.9.3
+        - openjpeg 2.1.0 [not win]
+        - curl 7.63.0 # [not win]
 
 test:
     files:
