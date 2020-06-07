@@ -7,71 +7,80 @@ else
     PGFLAG="--with-pg=$PREFIX/bin/pg_config"
 fi
 
-echo prefix is $PREFIX
+#TODO(oalexan1): Why things don't work without this hack?
+export PREFIX="${PREFIX}/../_build_env"
+
+echo "PREFIX=${PREFIX}"
 
 # Fix for missing liblzma.
 perl -pi -e "s#(/[^\s]*?lib)/lib([^\s]+).la#-L\$1 -l\$2#g" $PREFIX/lib/*.la
 
-CPPFLAGS="-I$PREFIX/include" LDFLAGS="-L$PREFIX/lib" \
-./configure --prefix=$PREFIX \
- --without-bsb \
- --without-cfitsio \
- --without-dods-root \
- --without-dwg-plt \
- --without-dwgdirect \
- --without-ecw \
- --without-epsilon \
- --without-expat \
- --without-expat-inc \
- --without-expat-lib \
- --without-fme \
- --without-gif \
- --without-grass \
- --without-hdf4 \
- --without-hdf5 \
- --without-idb \
- --without-ingres \
- --without-jasper \
- --without-jp2mrsid \
- --without-kakadu \
- --without-libgrass \
- --without-macosx-framework \
- --without-mrsid \
- --without-msg \
- --without-mysql \
- --without-netcdf \
- --without-oci \
- --without-oci-include \
- --without-oci-lib \
- --without-odbc \
- --without-ogdi \
- --without-pcidsk \
- --without-pcraster \
- --without-perl \
- --without-pg \
- --without-php \
- --without-pymoddir \
- --without-python \
- --without-sde \
- --without-sde-version \
- --without-spatialite \
- --without-sqlite3 \
- --without-static-proj4 \
- --without-xerces \
- --without-xerces-inc \
- --without-xerces-lib \
- --without-libiconv-prefix \
- --without-libiconv \
- --without-xml2 \
- --without-pcre \
- --without-freexl \
- --without-json-c \
- --without-kea \
-            --with-openjpeg=$PREFIX \
-            --disable-rpath \
-            --without-pam 
+echo prefix is "${PREFIX}"
+export CPPFLAGS="-I$PREFIX/include"
+export LDFLAGS="-L$PREFIX/lib"
+echo "CPPFLAGS=${CPPFLAGS}"
+echo "LDFLAGS=${LDFLAGS}"
 
-make -j 10
+./configure \
+    --prefix=$PREFIX \
+    --with-openjpeg=$PREFIX \
+    --without-bsb \
+    --without-cfitsio \
+    --without-dods-root \
+    --without-dwg-plt \
+    --without-dwgdirect \
+    --without-ecw \
+    --without-epsilon \
+    --without-expat \
+    --without-expat-inc \
+    --without-expat-lib \
+    --without-fme \
+    --without-gif \
+    --without-grass \
+    --without-hdf4 \
+    --without-hdf5 \
+    --without-idb \
+    --without-ingres \
+    --without-jasper \
+    --without-jp2mrsid \
+    --without-kakadu \
+    --without-libgrass \
+    --without-macosx-framework \
+    --without-mrsid \
+    --without-msg \
+    --without-mysql \
+    --without-netcdf \
+    --without-oci \
+    --without-oci-include \
+    --without-oci-lib \
+    --without-odbc \
+    --without-ogdi \
+    --without-pcidsk \
+    --without-pcraster \
+    --without-perl \
+    --without-pg \
+    --without-php \
+    --without-pymoddir \
+    --without-python \
+    --without-sde \
+    --without-sde-version \
+    --without-spatialite \
+    --without-sqlite3 \
+    --without-static-proj4 \
+    --without-xerces \
+    --without-xerces-inc \
+    --without-xerces-lib \
+    --without-libiconv-prefix \
+    --without-libiconv \
+    --without-xml2 \
+    --without-pcre \
+    --without-freexl \
+    --without-json-c \
+    --without-kea \
+    --disable-rpath \
+    --without-pam 
+
+make -j${CPU_COUNT}
 make install
 
 if [ $(uname) == Darwin ]; then
