@@ -7,6 +7,11 @@ else
     PGFLAG="--with-pg=$PREFIX/bin/pg_config"
 fi
 
+echo prefix is $PREFIX
+
+# Fix for missing liblzma.
+perl -pi -e "s#(/[^\s]*?lib)/lib([^\s]+).la#-L\$1 -l\$2#g" $PREFIX/lib/*.la
+
 CPPFLAGS="-I$PREFIX/include" LDFLAGS="-L$PREFIX/lib" \
 ./configure --prefix=$PREFIX \
  --without-bsb \
