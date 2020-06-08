@@ -32,7 +32,6 @@ requirements:
         - libstdcxx-ng              9.1.0
         - libtiff                   4.0.9
         - ncurses                   6.1
-        - openjpeg                  2.1.0
         - openssl                   1.0.2u
         - proj4                     4.9.3
         - tk                        8.6.10
@@ -53,7 +52,6 @@ requirements:
         - libstdcxx-ng              9.1.0
         - libtiff                   4.0.9
         - ncurses                   6.1
-        - openjpeg                  2.1.0
         - openssl                   1.0.2u
         - proj4                     4.9.3
         - tk                        8.6.10

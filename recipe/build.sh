@@ -7,13 +7,10 @@ else
     PGFLAG="--with-pg=$PREFIX/bin/pg_config"
 fi
 
-#TODO(oalexan1): Why things don't work without this hack?
-export PREFIX="${PREFIX}/../_build_env"
-
 echo "PREFIX=${PREFIX}"
 
 # Fix for missing liblzma.
-perl -pi -e "s#(/[^\s]*?lib)/lib([^\s]+).la#-L\$1 -l\$2#g" $PREFIX/lib/*.la
+perl -pi -e "s#(/[^\s]*?lib)/lib([^\s]+).la#-L\$1 -l\$2#g" ${BUILD_PREFIX}/lib/*.la
 
 echo prefix is "${PREFIX}"
 export CPPFLAGS="-I$PREFIX/include"
@@ -23,7 +20,7 @@ echo "LDFLAGS=${LDFLAGS}"
 
 ./configure \
     --prefix=$PREFIX \
-    --with-openjpeg=$PREFIX \
+    --with-openjpeg=${BUILD_PREFIX} \
     --without-bsb \
     --without-cfitsio \
     --without-dods-root \
