@@ -19,44 +19,45 @@ requirements:
     build:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
-        - curl                      7.63.0
-        - libcurl                   7.63.0
-        - geos                      3.7.3
-        - jpeg                      9b
-        - openjpeg                  2.1.0
-        - krb5                      1.16.3
-        - libedit                   3.1.20181209
-        - libgcc-ng                 9.1.0
-        - libpng                    1.6.37
-        - libssh2                   1.8.0
-        - libstdcxx-ng              9.1.0
-        - libtiff                   4.0.9
-        - ncurses                   6.1
-        - openssl                   1.0.2u
+    host:
+        - jpeg
+        - libpng
+        - libtiff
+        - openjpeg                  2.1
+        - xz
+        - zlib
+        - curl
+        - libcurl
+        - geos
+        - krb5
+        - libedit
+        - libgcc-ng
+        - libssh2
+        - libstdcxx-ng
+        - ncurses
+        - openssl
         - proj4                     4.9.3
-        - tk                        8.6.10
-        - xz                        5.2.5
-        - zlib                      1.2.11
-
+        - tk
+        - imagemagick               6.8.6
     run:
-        - curl                      7.63.0
-        - libcurl                   7.63.0
-        - geos                      3.7.3
-        - jpeg                      9b
-        - openjpeg                  2.1.0
-        - krb5                      1.16.3
-        - libedit                   3.1.20181209
-        - libgcc-ng                 9.1.0
-        - libpng                    1.6.37
-        - libssh2                   1.8.0
-        - libstdcxx-ng              9.1.0
-        - libtiff                   4.0.9
-        - ncurses                   6.1
-        - openssl                   1.0.2u
+        - jpeg
+        - libpng
+        - libtiff
+        - openjpeg                  2.1
+        - xz
+        - zlib
+        - curl
+        - libcurl
+        - geos
+        - krb5
+        - libedit
+        - libgcc-ng
+        - libssh2
+        - libstdcxx-ng
+        - ncurses
+        - openssl
         - proj4                     4.9.3
-        - tk                        8.6.10
-        - xz                        5.2.5
-        - zlib                      1.2.11
+        - tk
 
 test:
     files:

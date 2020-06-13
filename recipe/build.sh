@@ -7,20 +7,15 @@ else
     PGFLAG="--with-pg=$PREFIX/bin/pg_config"
 fi
 
-echo "PREFIX=${PREFIX}"
-
 # Fix for missing liblzma.
-perl -pi -e "s#(/[^\s]*?lib)/lib([^\s]+).la#-L\$1 -l\$2#g" ${BUILD_PREFIX}/lib/*.la
+perl -pi -e "s#(/[^\s]*?lib)/lib([^\s]+).la#-L\$1 -l\$2#g" ${PREFIX}/lib/*.la
 
-echo prefix is "${PREFIX}"
 export CPPFLAGS="-I$PREFIX/include"
 export LDFLAGS="-L$PREFIX/lib"
-echo "CPPFLAGS=${CPPFLAGS}"
-echo "LDFLAGS=${LDFLAGS}"
 
 ./configure \
     --prefix=$PREFIX \
-    --with-openjpeg=${BUILD_PREFIX} \
+    --with-openjpeg=${PREFIX} \
     --without-bsb \
     --without-cfitsio \
     --without-dods-root \
