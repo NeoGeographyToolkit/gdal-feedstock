@@ -8,8 +8,8 @@ source:
     url: http://download.osgeo.org/gdal/{{ version }}/gdal-{{ version }}.tar.gz
     md5: 573865f3f59ba7b4f8f4cddf223b52a5
     patches:
-        - clang.patch  # [osx]
-        - prepend-dll.patch  # [win]
+#        - clang.patch  # [osx]
+#        - prepend-dll.patch  # [win]
 
 build:
     number: 0
@@ -25,11 +25,9 @@ requirements:
         - jpeg 9b
         - openjpeg 2.1.0
         - krb5 1.16.3
-        - libedit 3.1.20191231
-        - libgcc-ng 9.2.0
+        - libedit
         - libpng 1.6.37
         - libssh2 1.8.0
-        - libstdcxx-ng 9.2.0
         - libtiff 4.0.9
         - ncurses 6.1
         - openssl 1.0.2u
@@ -44,11 +42,9 @@ requirements:
         - jpeg 9b
         - openjpeg 2.1.0
         - krb5 1.16.3
-        - libedit 3.1.20191231
-        - libgcc-ng 9.2.0
+        - libedit
         - libpng 1.6.37
         - libssh2 1.8.0
-        - libstdcxx-ng 9.2.0
         - libtiff 4.0.9
         - ncurses 6.1
         - openssl 1.0.2u
