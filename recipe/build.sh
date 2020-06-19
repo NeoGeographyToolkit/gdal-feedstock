@@ -7,11 +7,16 @@ else
     PGFLAG="--with-pg=$PREFIX/bin/pg_config"
 fi
 
+echo "PREFIX=${PREFIX}"
+
 # Fix for missing liblzma.
 perl -pi -e "s#(/[^\s]*?lib)/lib([^\s]+).la#-L\$1 -l\$2#g" ${PREFIX}/lib/*.la
 
+echo prefix is "${PREFIX}"
 export CPPFLAGS="-I$PREFIX/include"
 export LDFLAGS="-L$PREFIX/lib"
+echo "CPPFLAGS=${CPPFLAGS}"
+echo "LDFLAGS=${LDFLAGS}"
 
 ./configure \
     --prefix=$PREFIX \
@@ -84,12 +89,12 @@ if [ $(uname) == Darwin ]; then
     cp frmts/gtiff/libtiff/*.h $PREFIX/include/gdal/frmts/gtiff/libtiff
 fi
 
-# Make sure GDAL_DATA and set and still present in the package.
-# https://github.com/conda/conda-recipes/pull/267
-ACTIVATE_DIR=$PREFIX/etc/conda/activate.d
-DEACTIVATE_DIR=$PREFIX/etc/conda/deactivate.d
-mkdir -p $ACTIVATE_DIR
-mkdir -p $DEACTIVATE_DIR
+# # Make sure GDAL_DATA and set and still present in the package.
+# # https://github.com/conda/conda-recipes/pull/267
+# ACTIVATE_DIR=$PREFIX/etc/conda/activate.d
+# DEACTIVATE_DIR=$PREFIX/etc/conda/deactivate.d
+# mkdir -p $ACTIVATE_DIR
+# mkdir -p $DEACTIVATE_DIR
 
-cp $RECIPE_DIR/scripts/activate.sh $ACTIVATE_DIR/gdal-activate.sh
-cp $RECIPE_DIR/scripts/deactivate.sh $DEACTIVATE_DIR/gdal-deactivate.sh
+# cp $RECIPE_DIR/scripts/activate.sh $ACTIVATE_DIR/gdal-activate.sh
+# cp $RECIPE_DIR/scripts/deactivate.sh $DEACTIVATE_DIR/gdal-deactivate.sh

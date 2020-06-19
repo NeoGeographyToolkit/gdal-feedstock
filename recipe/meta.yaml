@@ -10,7 +10,6 @@ source:
     patches:
         - clang.patch  # [osx]
         - prepend-dll.patch  # [win]
-        - install_scripts.patch
 
 build:
     number: 0
@@ -20,52 +19,45 @@ requirements:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
     host:
-        - jpeg
-        - libpng
-        - libtiff
-        - openjpeg                  2.1
-        - xz
-        - zlib
-        - curl
-        - libcurl
-        - geos
-        - krb5
-        - libedit
-        - libgcc-ng
-        - libssh2
-        - libstdcxx-ng
-        - ncurses
-        - openssl
-        - proj4                     4.9.3
-        - tk
-        - imagemagick               6.8.6
+        - curl 7.64.0
+        - libcurl 7.64.0
+        - geos 3.7.3
+        - jpeg 9b
+        - openjpeg 2.1.0
+        - krb5 1.16.3
+        - libedit 3.1.20191231
+        - libgcc-ng 9.2.0
+        - libpng 1.6.37
+        - libssh2 1.8.0
+        - libstdcxx-ng 9.2.0
+        - libtiff 4.0.9
+        - ncurses 6.1
+        - openssl 1.0.2u
+        - proj4 4.9.3
+        - tk 8.6.10
+        - xz 5.2.5
+        - zlib 1.2.11
     run:
-        - jpeg
-        - libpng
-        - libtiff
-        - openjpeg                  2.1
-        - xz
-        - zlib
-        - curl
-        - libcurl
-        - geos
-        - krb5
-        - libedit
-        - libgcc-ng
-        - libssh2
-        - libstdcxx-ng
-        - ncurses
-        - openssl
-        - proj4                     4.9.3
-        - tk
+        - curl 7.64.0
+        - libcurl 7.64.0
+        - geos 3.7.3
+        - jpeg 9b
+        - openjpeg 2.1.0
+        - krb5 1.16.3
+        - libedit 3.1.20191231
+        - libgcc-ng 9.2.0
+        - libpng 1.6.37
+        - libssh2 1.8.0
+        - libstdcxx-ng 9.2.0
+        - libtiff 4.0.9
+        - ncurses 6.1
+        - openssl 1.0.2u
+        - proj4 4.9.3
+        - tk 8.6.10
+        - xz 5.2.5
+        - zlib 1.2.11
 
 test:
-    files:
-        imports:
-        commands:
-        - gdal_translate --version  # [not win]
-        - gdalwarp --version  # [not win]
-        - gdalinfo --formats  # [not win]
 
 about:
     home: http://www.gdal.org/
