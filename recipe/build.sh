@@ -74,8 +74,7 @@ echo "LDFLAGS=${LDFLAGS}"
     --without-freexl \
     --without-json-c \
     --without-kea \
-    --disable-rpath \
-    --without-pam 
+    --disable-rpath
 
 make -j${CPU_COUNT}
 make install
