@@ -35,7 +35,7 @@ requirements:
         - tk 8.6.10
         - xz 5.2.5
         - zlib 1.2.11
-        - isis   4.4.0
+        - isis   4.4.0 # to catch dependency problems
     run:
         - curl 7.64.0
         - libcurl 7.64.0
@@ -53,7 +53,7 @@ requirements:
         - tk 8.6.10
         - xz 5.2.5
         - zlib 1.2.11
-        - isis   4.4.0
+        - isis   4.4.0 # to catch dependency problems
 
 test:
 
