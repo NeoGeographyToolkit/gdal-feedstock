@@ -1,11 +1,11 @@
-{% set version = "2.0.2" %}
+{% set version = "isis4.4.0" %} # synched up to isis dependencies for this version
 package:
     name: gdal
     version: {{ version }}
 
 source:
-    fn: gdal-{{ version }}.tar.gz
-    url: http://download.osgeo.org/gdal/{{ version }}/gdal-{{ version }}.tar.gz
+    fn: gdal-2.0.2.tar.gz
+    url: http://download.osgeo.org/gdal/2.0.2/gdal-2.0.2.tar.gz
     md5: 573865f3f59ba7b4f8f4cddf223b52a5
     patches:
 #        - clang.patch  # [osx]
@@ -29,12 +29,13 @@ requirements:
         - libpng 1.6.37
         - libssh2 1.8.0
         - libtiff 4.0.9
-        - ncurses 6.1
+        - ncurses 6.2
         - openssl 1.0.2u
         - proj4 4.9.3
         - tk 8.6.10
         - xz 5.2.5
         - zlib 1.2.11
+        - isis   4.4.0
     run:
         - curl 7.64.0
         - libcurl 7.64.0
@@ -46,12 +47,13 @@ requirements:
         - libpng 1.6.37
         - libssh2 1.8.0
         - libtiff 4.0.9
-        - ncurses 6.1
+        - ncurses 6.2
         - openssl 1.0.2u
         - proj4 4.9.3
         - tk 8.6.10
         - xz 5.2.5
         - zlib 1.2.11
+        - isis   4.4.0
 
 test:
 
