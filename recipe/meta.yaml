@@ -24,7 +24,7 @@ requirements:
         - geos 3.7.3
         - jpeg 9d
         - openjpeg 2.1.0
-        - krb5
+        - krb5 1.16.3
         - libedit
         - libpng 1.6.37
         - libssh2 1.8.0
@@ -41,7 +41,7 @@ requirements:
         - geos 3.7.3
         - jpeg 9d
         - openjpeg 2.1.0
-        - krb5
+        - krb5 1.16.3
         - libedit
         - libpng 1.6.37
         - libssh2 1.8.0
